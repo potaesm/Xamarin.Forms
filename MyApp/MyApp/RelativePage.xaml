@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    Padding="0, 20, 0, 0"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyApp.RelativePage">
+    <RelativeLayout>
+        <BoxView 
+            x:Name="banner"
+            Color="#f7f7f7" 
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}" />
+        <StackLayout 
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="$11.95" FontSize="60" TextColor="#33353a" FontAttributes="Bold"/>
+            <Button Text="Add $7.99 Credit" TextColor="White" BackgroundColor="#1695A3" BorderRadius="15" HeightRequest="30" FontSize="15" FontAttributes="Bold"/>
+        </StackLayout>
+        <StackLayout
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=banner, Property=Height, Factor=1, Constant=30}"
+            >
+            <Label Text="Why pay for credit?" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label FontSize="13" HorizontalTextAlignment="Center" Margin="20, 10, 20, 0">
+            Because you can reach people who aren’t on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates.
+            </Label>
+        </StackLayout>
+        
+        <!--<BoxView
+            Color="Silver"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=banner, Property=Height, Factor=1, Constant=20}" />-->
+        
+    </RelativeLayout>
+</ContentPage>
